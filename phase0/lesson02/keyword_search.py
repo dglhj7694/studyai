@@ -30,9 +30,16 @@ def count_keyword_occurrences(text: str, keyword: str) -> int:
     return text_lower.count(keyword_lower)
 
 
-def search_documents(documents: list[dict], query: str) -> list[dict]:
+def search_documents(
+    documents: list[dict],
+    query: str,
+    min_score: int = 1,
+) -> list[dict]:
     """
     문서 리스트에서 query가 많이 등장하는 문서를 검색한다.
+
+    min_score:
+        검색 결과에 포함되기 위한 최소 점수
     """
 
     results = []
@@ -47,7 +54,7 @@ def search_documents(documents: list[dict], query: str) -> list[dict]:
 
         score = content_count + file_name_count * 2 + category_count * 3
 
-        if score > 0:
+        if score >= min_score:
             result = {
                 "id": doc["id"],
                 "score": score,
@@ -64,6 +71,18 @@ def search_documents(documents: list[dict], query: str) -> list[dict]:
     results.sort(key=lambda x: x["score"], reverse=True)
 
     return results
+
+
+def save_search_results(results: list[dict], output_path: str) -> None:
+    """
+    검색 결과를 JSON 파일로 저장한다.
+    """
+
+    path = Path(output_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    json_text = json.dumps(results, ensure_ascii=False, indent=2)
+    path.write_text(json_text, encoding="utf-8")
 
 
 def print_search_results(query: str, results: list[dict]) -> None:
@@ -93,17 +112,33 @@ def print_search_results(query: str, results: list[dict]) -> None:
 
 def main():
     json_path = "phase0/lesson02/outputs/documents_with_metadata.json"
+    output_path = "phase0/lesson02/outputs/search_results.json"
 
     documents = load_documents(json_path)
 
+    # 방법 1. 직접 입력받기
     query = input("검색어를 입력하세요: ").strip()
+
+    # 방법 2. 테스트용 고정 검색어를 쓰고 싶으면 위 줄을 주석 처리하고 아래 줄 사용
+    # query = "RAG"
 
     if not query:
         print("검색어가 비어 있습니다.")
         return
 
-    results = search_documents(documents, query)
+    min_score = 1
+
+    results = search_documents(
+        documents=documents,
+        query=query,
+        min_score=min_score,
+    )
+
     print_search_results(query, results)
+    save_search_results(results, output_path)
+
+    print("\n검색 결과 JSON 저장 완료")
+    print(f"저장 위치: {output_path}")
 
 
 if __name__ == "__main__":
