@@ -1,0 +1,22 @@
+[
+  {
+    "id": "doc_002",
+    "score": 8,
+    "file_name": "rag_intro.txt",
+    "category": "rag",
+    "preview": "RAG는 Retrieval-Augmented Generation의 약자이다.\n\nLLM이 답변을 만들기 전에 외부 문서를 검색하고,\n검색된 문서를 기반으로 답변을 생성하는 방식이다.",
+    "content_count": 3,
+    "file_name_count": 1,
+    "category_count": 1
+  },
+  {
+    "id": "doc_003",
+    "score": 5,
+    "file_name": "sample_note.txt",
+    "category": "rag",
+    "preview": "RAG는 Retrieval-Augmented Generation의 약자이다.\n\nLLM이 모든 지식을 내부 파라미터에 외우는 대신,\n외부 문서를 검색한 뒤 그 내용을 기반으로 답변하",
+    "content_count": 2,
+    "file_name_count": 0,
+    "category_count": 1
+  }
+]

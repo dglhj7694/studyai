@@ -75,6 +75,7 @@ def load_documents_from_dir(data_dir: str) -> list[dict]:
         doc_id = f"doc_{index:03d}"
         document = load_text_file(str(txt_file), doc_id)
         documents.append(document)
+        
 
     return documents
 
