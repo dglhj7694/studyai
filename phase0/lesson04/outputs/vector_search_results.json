@@ -1,0 +1,35 @@
+[
+  {
+    "id": "doc_rag",
+    "title": "RAG 개념",
+    "content": "RAG는 외부 문서를 검색한 뒤 그 내용을 기반으로 답변하는 방식이다.",
+    "vector": [
+      1.0,
+      0.1,
+      0.1
+    ],
+    "similarity": 0.9929643055896331
+  },
+  {
+    "id": "doc_fine_tuning",
+    "title": "Fine-tuning 개념",
+    "content": "Fine-tuning은 기존 모델을 특정 목적에 맞게 추가 학습하는 과정이다.",
+    "vector": [
+      0.1,
+      1.0,
+      0.1
+    ],
+    "similarity": 0.3203110663192365
+  },
+  {
+    "id": "doc_transformer",
+    "title": "Transformer 개념",
+    "content": "Transformer는 Attention을 사용해 문맥 관계를 계산하는 모델 구조이다.",
+    "vector": [
+      0.1,
+      0.1,
+      1.0
+    ],
+    "similarity": 0.22421774642346556
+  }
+]
