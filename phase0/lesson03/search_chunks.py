@@ -59,7 +59,7 @@ def search_chunks(
                 "start_char": metadata["start_char"],
                 "end_char": metadata["end_char"],
                 "preview": metadata["preview"],
-                "content": content,
+                # "content": content,
                 "content_count": content_count,
                 "file_name_count": file_name_count,
                 "category_count": category_count,
@@ -106,8 +106,10 @@ def print_results(query: str, results: list[dict]) -> None:
         print(f"카테고리: {result['category']}")
         print(f"문자 범위: {result['start_char']} ~ {result['end_char']}")
         print(f"미리보기: {result['preview']}")
-        print("\n본문:")
-        print(result["content"][:300])
+
+        if "content" in result:
+            print("\n본문:")
+            print(result["content"][:300])
 
 
 def main():
