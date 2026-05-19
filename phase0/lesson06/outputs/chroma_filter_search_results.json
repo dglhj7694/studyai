@@ -1,0 +1,11 @@
+[
+  {
+    "chunk_id": "doc_001_chunk_001",
+    "distance": 0.8173006176948547,
+    "file_name": "fine_tuning_intro.txt",
+    "category": "fine_tuning",
+    "chunk_index": 1,
+    "preview": "Fine-tuning은 이미 학습된 모델을 특정 목적에 맞게 추가 학습하는 과정이다.\n\n예를 들어 고객센터 답변 스타일, 특정 JSON 출력 형식,\n회사 내부 업무 프로세스 등을 ",
+    "content": "Fine-tuning은 이미 학습된 모델을 특정 목적에 맞게 추가 학습하는 과정이다.\n\n예를 들어 고객센터 답변 스타일, 특정 JSON 출력 형식,\n회사 내부 업무 프로세스 등을 모델에게 학습시킬 수 있다.\n\nFine-tuning은 지식을 새로 외우게 하는 용도보다는\n답변 방식, 추론 패턴, 업무 스타일을 맞추는 데 더 적합하다.\n\n대표적인 기법으로 SFT, LoRA, QLoRA, DPO, ORPO 등이 있다."
+  }
+]

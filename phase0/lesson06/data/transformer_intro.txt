@@ -1,0 +1,9 @@
+Transformer는 현대 LLM의 핵심 구조이다.
+
+기존 RNN처럼 단어를 순서대로 하나씩 처리하는 대신,
+Self-Attention을 사용해 문장 안의 단어들이 서로 어떤 관계인지 계산한다.
+
+Transformer는 Attention, Feed Forward Network, Residual Connection,
+Layer Normalization 등의 구성요소로 이루어져 있다.
+
+GPT, BERT, T5, Llama, Qwen, Mistral 같은 모델들은 Transformer 구조를 기반으로 한다.
